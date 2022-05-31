@@ -1,7 +1,15 @@
-{% extends 'header.html' %}
+{% include 'header.html' %}
 
-
+{% load static %}
 {% block body %}
+<br><br>
+<div>
+<img style="width:100%;" src='{% static "images/main.jpg" %}'>
+</div>
+<br><br>
+
+
+{% include 'jobsads.html' %}
 
 
 {% endblock %}
