@@ -3,13 +3,22 @@
 {% load static %}
 {% block body %}
 <br><br>
+{% if main  %}
 <div>
 <img style="width:100%;" src='{% static "images/main.jpg" %}'>
 </div>
 <br><br>
 
-
 {% include 'jobsads.html' %}
+
+{% endif %}
+
+
+{% if apply  %}
+<br><br>
+{% include 'ApplyPage.html' %}
+
+{% endif %}
 
 
 {% endblock %}

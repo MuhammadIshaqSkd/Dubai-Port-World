@@ -1,0 +1,143 @@
+
+
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+  <head>
+    <title>Camp Registration</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+      {% include 'css/apply.css' %}
+
+  </head>
+  <body>
+    <div class="testbox">
+      <form>
+        <div class="banner">
+          <h1> Registration</h1>
+        </div>
+        <br/>
+        <fieldset>
+          <legend>Personal Information</legend>
+<!--          <div class="item">-->
+<!--            <label for="fname"> Name<span>*</span></label>-->
+<!--            <input id="fname" type="text" name="fname" />-->
+<!--          </div>-->
+<!--          <div class="item">-->
+<!--            <label for="activity">Email #<span>*</span></label>-->
+<!--            <input id="activity" type="text" name="activity" />-->
+<!--          </div>-->
+<!--          <div class="item">-->
+<!--            <label for="fee">Phone Number<span>*</span></label>-->
+<!--            <input id="fee" type="number" name="fee" />-->
+<!--          </div>-->
+<!--                   <div class="item">-->
+<!--            <label for="bdate">Birth Date <span>*</span></label>-->
+<!--            <input id="bdate" type="date" name="bdate" />-->
+<!--            <i class="fas fa-calendar-alt"></i>-->
+<!--          </div>-->
+<!--                        <div class="question">-->
+<!--            <label>City Resident?<br/>(non-city residents add $5.00 for each participant)</label>-->
+<!--            <div class="question-answer">-->
+<!--              <div>-->
+<!--                <input type="radio" value="none" id="radio_1" name="city"/>-->
+<!--                <label for="radio_1" class="radio"><span>Yes - I am a city resident</span></label>-->
+<!--              </div>-->
+<!--              <div>-->
+<!--                <input  type="radio" value="none" id="radio_2" name="city"/>-->
+<!--                <label for="radio_2" class="radio"><span>No - I am not a city resident</span></label>-->
+<!--              </div>-->
+<!--                         </div>-->
+<!--          </div>-->
+<!--         <div>-->
+<!--<span id="result"></span>-->
+<!--          <button type="calc" id="calc"  onclick="calcNumbers()">Calculate</button>-->
+<!--        </div>-->
+               </fieldset>
+        <br/>
+        <fieldset>
+<!--          <legend>Household / Adult Primary Contact</legend>-->
+           <div class="colums">
+          <div class="item">
+            <label for="fname"> First Name<span>*</span></label>
+            <input id="fname" type="text" name="fname" />
+          </div>
+          <div class="item">
+            <label for="lname"> Last Name<span>*</span></label>
+            <input id="lname" type="text" name="lname" />
+          </div>
+ <div class="item">
+            <label for="address1">Address 1<span>*</span></label>
+            <input id="address1" type="text"   name="address1" />
+          </div>
+  <div class="item">
+            <label for="address2">Address 2<span>*</span></label>
+            <input id="address2" type="text"   name="address2" />
+          </div>
+  <div class="item">
+            <label for="city">City<span>*</span></label>
+            <input id="city" type="text"   name="city" />
+          </div>
+ <div class="item">
+            <label for="state">State<span>*</span></label>
+            <input id="state" type="text"   name="state" />
+          </div>
+                             <div class="item">
+            <label for="eaddress">Email Address<span>*</span></label>
+            <input id="eaddress" type="text"   name="eaddress" />
+          </div>
+          <div class="item">
+            <label for="phone">Phone<span>*</span></label>
+            <input id="phone" type="tel"   name="phone" />
+          </div>
+          <div class="item">
+            <label for="zip">Zip<span>*</span></label>
+            <input id="zip" type="text"   name="zip" />
+          </div>
+
+                           <div class="question">
+            <label>Currently</label>
+            <div class="question-answer">
+              <div>
+                <input type="radio" value="none" id="radio_3" name="participants"/>
+                <label for="radio_3" class="radio"><span>Self Employee</span></label>
+              </div>
+              <div>
+                <input  type="radio" value="none" id="radio_4" name="participants"/>
+                <label for="radio_4" class="radio"><span>Employee</span></label>
+              </div>
+              <div>
+<!--                <input  type="radio" value="none" id="radio_5" name="participants"/>-->
+<!--                <label for="radio_5" class="radio"><span>Father</span></label>-->
+<!--              </div>-->
+<!--              <div>-->
+<!--                <input  type="radio" value="none" id="radio_6" name="participants"/>-->
+<!--                <label for="radio_6" class="radio"><span>Guardian</span></label>-->
+<!--              </div>-->
+<!--              <div>-->
+<!--                <input  type="radio" value="none" id="radio_7" name="participants"/>-->
+<!--                <label for="radio_7" class="radio"><span>Other</span></label>-->
+<!--<input type="text"/>-->
+<!--              </div>-->
+            </div>
+          </div>
+                </fieldset>
+        <div class="btn-block">
+          <button type="submit" href="/">Submit</button>
+        </div>
+      </form>
+    </div>
+<script >
+	var a = document.getElementByID("fee").value;
+	var b = document.getElementByID("fee1").value;
+	var c = document.getElementByID("fee2").value;
+	var result = a+b+c;
+	function calcNumbers(){
+		document.getElementByID("result").innerHTML = result;
+	}
+</script>
+  </body>
+</html>
