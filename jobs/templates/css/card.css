@@ -1,0 +1,22 @@
+
+<style type="text/css">
+
+
+.col-md-3
+    {
+    display: inline-block;
+    margin-right:85px;
+    margin-left:18px;
+    }
+    .col-md-3 img{
+    height:300px;
+    }
+    body .carousel-indicators{
+
+    bottom: -40px;
+    }
+
+        .view{
+        margin-left:40%;
+        }
+</style>

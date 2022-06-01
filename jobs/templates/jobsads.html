@@ -1,41 +1,87 @@
 {% load static %}
+  {% include 'css/card.css' %}
+<!--<div style="margin-left:50px;" class="row">-->
+<!--   <div  class="col-md-1"></div>-->
+<!--&lt;!&ndash;   Card 1 &ndash;&gt;-->
+<!--    <div style="margin-bottom:20px;" class="col-md-3">-->
+<!--      <div class="card" style="width: 18rem;">-->
+<!--        <img src='{% static "ads/Green Modern Holidays Trip Package Promotion Flyer.png" %}' class="card-img-top" alt="...">-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title">Green Modern Holidays Trip Package Promotion Flyer</h5>-->
+<!--          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--          <a href="apply" class="btn btn-primary">Apply</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
-<div style="margin-left:50px;" class="row">
-   <div  class="col-md-1"></div>
-<!--   Card 1 -->
-    <div style="margin-bottom:20px;" class="col-md-3">
-      <div class="card" style="width: 18rem;">
-        <img src='{% static "ads/ads.jpg" %}' class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Ad Name</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="apply" class="btn btn-primary">Apply</a>
+<!--&lt;!&ndash;   Card 2&ndash;&gt;-->
+<!--   <div style="margin-bottom:20px;"  class="col-md-3">-->
+<!--      <div class="card" style="width: 18rem;">-->
+<!--        <img src='{% static "ads/simple elegant minimalist eid adha travel flyer for flyer.png" %}' class="card-img-top" alt="...">-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title">simple elegant minimalist eid adha travel flyer for flyer</h5>-->
+<!--          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--          <a href="#" class="btn btn-primary">Apply</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--   &lt;!&ndash;   Card 3&ndash;&gt;-->
+<!--   <div style="margin-bottom:20px;"  class="col-md-3">-->
+<!--      <div class="card" style="width: 18rem;">-->
+<!--        <img src='{% static "ads/White and brown minimalist hotel and resort (Instagram Story).png" %}' class="card-img-top" alt="...">-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title">White and brown minimalist hotel and resort</h5>-->
+<!--          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--          <a href="#" class="btn btn-primary">Apply</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!-- </div>-->
+<!-- <br>-->
+
+
+
+
+<!--Displaying vehicles start-->
+<div class="container">
+
+    <!--Slideshow starts here -->
+    {% for product, range, nSlides in allProds %}
+
+    <div class="row">
+        <div id="demod{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
+            <ul class="carousel-indicators">
+
+            </ul>
+            <div class="container carousel-inner no-padding">
+                <div class="carousel-item active">
+                    {% for i in product %}
+                    <div class="col-xs-3 col-sm-3 col-md-3" style="">
+                        <!--   Card 1 -->
+                            <div style="margin-bottom:20px;">
+                              <div class="card"  >
+                                <img src='/media/{{i.Ad_image}}' class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h4 class="card-title">{{i.Ad_name}}</h4>
+                                  <p class="card-title">Publish Date: {{i.pub_date}}</p>
+                                  <p class="card-text">{{i.description}}</p>
+                                  <a href="apply" class="btn btn-primary">Apply Now</a>
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:100 and forloop.counter > 0 and not forloop.last %}
+                </div>
+
+                <div class="carousel-item">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-      </div>
+
     </div>
 
-<!--   Card 2-->
-   <div style="margin-bottom:20px;"  class="col-md-3">
-      <div class="card" style="width: 18rem;">
-        <img src='{% static "ads/ads.jpg" %}' class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Ad Name</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Apply</a>
-        </div>
-      </div>
-    </div>
-
-   <!--   Card 3-->
-   <div style="margin-bottom:20px;"  class="col-md-3">
-      <div class="card" style="width: 18rem;">
-        <img src='{% static "ads/ads.jpg" %}' class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Ad Name</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Apply</a>
-        </div>
-      </div>
-    </div>
- </div>
- <br>
+    {% endfor %}
+</div>
