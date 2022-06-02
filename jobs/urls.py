@@ -18,5 +18,6 @@ from . import views
 urlpatterns = [
     path('',views.index),
     path('apply',views.apply),
+    path('applyform',views.applyform),
 
 ]

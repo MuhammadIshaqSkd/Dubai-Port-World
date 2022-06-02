@@ -1,0 +1,25 @@
+
+
+{% load static %}
+{% include 'css/index.css' %}
+<!--comfirming-->
+<div class="bg-modals">
+
+  <div class="modal-contents">
+            <div class="col-md-12 de" style="background-color:green;border:3px solid black;margin-top:20px;">
+                                <h2  style="font-size: 17px;margin-right:10%;color:white;"><b>Your Application is Successfully Submitted</b></h2>
+
+             </div>
+            <div>
+                              <img style="height:160px;" src='{% static "logo/tick.png" %}'>
+				<br>
+
+            </div>
+           <form action="/">
+
+               <button style="margin-top:24px;" type="submit" class="btn btn-primary cart">Dismiss</button>
+            </form>
+
+  </div>
+</div>
+<!--    ENDS-->

@@ -1,0 +1,23 @@
+<style>
+ .bg-modals {
+    width:100%;
+    height:90%;
+    background-color:rgba(0,0,0,0.7);
+    position:absolute;
+    top:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /* display: none; */
+    }
+    .modal-contents{
+    margin-top:100px;
+    width:480px;
+    height:330px;
+    background-color:white;
+    border-radius:4px;
+    text-align:center;
+    position: relative;
+    }
+
+</style>

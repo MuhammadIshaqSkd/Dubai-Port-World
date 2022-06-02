@@ -1,7 +1,7 @@
 from math import ceil
 
 from django.shortcuts import render
-from .models import Ad
+from .models import Ad, Applicant
 # Create your views here.
 
 
@@ -24,3 +24,23 @@ def apply(request):
     apply = 'apply'
 
     return render(request, 'index.html',{'apply':apply})
+
+def applyform(request):
+    if request.method == "POST":
+        name = request.POST.get('name', '')
+        address = request.POST.get('address', '')
+        applyjob = request.POST.get('applyjob', '')
+        country = request.POST.get('country', '')
+        city = request.POST.get('city', '')
+        email = request.POST.get('email', '')
+        cnic = request.POST.get('cnic', '')
+        phone = request.POST.get('phone', '')
+        zip = request.POST.get('zip', '')
+        apy = Applicant(Ap_name=name,adddress=address,country=country, city=city,
+                  applyedfor=applyjob,email=email,cnic=cnic,phone=phone,zip=zip, )
+
+        apy.save()
+        ch = 'new'
+        print("hello 1")
+
+        return render(request, 'index.html',{'ch':ch})
