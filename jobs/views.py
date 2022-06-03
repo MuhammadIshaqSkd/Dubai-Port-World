@@ -18,7 +18,7 @@ def index(request):
         allProds.append([prod, range(1, nSlides), nSlides])
     params = {'allProds': allProds, 'n': n,'main':main}
 
-    return render(request, 'index.html',params,)
+    return render(request, 'index.html',params)
 
 def apply(request):
     apply = 'apply'
@@ -33,7 +33,7 @@ def apply(request):
         allProds.append([prod, range(1, nSlides), nSlides])
     params = {'allProds': allProds, 'n': n, 'apply': apply}
 
-    return render(request, 'index.html', params, )
+    return render(request, 'index.html', params)
 
 def applyform(request):
     if request.method == "POST":
