@@ -1,19 +1,9 @@
 
-
-<!DOCTYPE html>
-
 {% load static %}
 
-<html>
-  <head>
-    <title>Camp Registration</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-      {% include 'css/apply.css' %}
+{% include 'css/apply.css' %}
 
-  </head>
-  <body>
     <div class="testbox">
       <form action="applyform" method = "POST">{% csrf_token %}
         <div class="banner">
@@ -22,60 +12,28 @@
         <br/>
         <fieldset>
           <legend>Personal Information</legend>
-<!--          <div class="item">-->
-<!--            <label for="fname"> Name<span>*</span></label>-->
-<!--            <input id="fname" type="text" name="fname" />-->
-<!--          </div>-->
-<!--          <div class="item">-->
-<!--            <label for="activity">Email #<span>*</span></label>-->
-<!--            <input id="activity" type="text" name="activity" />-->
-<!--          </div>-->
-<!--          <div class="item">-->
-<!--            <label for="fee">Phone Number<span>*</span></label>-->
-<!--            <input id="fee" type="number" name="fee" />-->
-<!--          </div>-->
-<!--                   <div class="item">-->
-<!--            <label for="bdate">Birth Date <span>*</span></label>-->
-<!--            <input id="bdate" type="date" name="bdate" />-->
-<!--            <i class="fas fa-calendar-alt"></i>-->
-<!--          </div>-->
-<!--                        <div class="question">-->
-<!--            <label>City Resident?<br/>(non-city residents add $5.00 for each participant)</label>-->
-<!--            <div class="question-answer">-->
-<!--              <div>-->
-<!--                <input type="radio" value="none" id="radio_1" name="city"/>-->
-<!--                <label for="radio_1" class="radio"><span>Yes - I am a city resident</span></label>-->
-<!--              </div>-->
-<!--              <div>-->
-<!--                <input  type="radio" value="none" id="radio_2" name="city"/>-->
-<!--                <label for="radio_2" class="radio"><span>No - I am not a city resident</span></label>-->
-<!--              </div>-->
-<!--                         </div>-->
-<!--          </div>-->
-<!--         <div>-->
-<!--<span id="result"></span>-->
-<!--          <button type="calc" id="calc"  onclick="calcNumbers()">Calculate</button>-->
-<!--        </div>-->
                </fieldset>
         <br/>
         <fieldset>
-<!--          <legend>Household / Adult Primary Contact</legend>-->
            <div class="colums">
           <div class="item">
             <label for="fname"> Your Name<span>*</span></label>
             <input id="fname" type="text" name="name" required />
           </div>
-<!--          <div class="item">-->
-<!--            <label for="lname"> Last Name<span>*</span></label>-->
-<!--            <input id="lname" type="text" name="lname" />-->
-<!--          </div>-->
+
           <div class="item">
             <label for="address1">Address <span>*</span></label>
             <input id="address1" type="text"   name="address" required />
           </div>
           <div class="item">
-            <label for="address1">Apply Job Name <span>*</span></label>
-            <input id="applyjob" type="text"   name="applyjob" required />
+              <label for="inputState" class="form-label">Select The Job</label>
+            <select class="form-select" aria-label="Default select example" name="applyjob">
+                {% for product, range, nSlides in allProds %}
+            {% for i in product %}
+              <option value="{{i.Ad_name}}" >{{i.Ad_name}}</option>
+            {% endfor %}
+            {% endfor %}
+            </select>
           </div>
           <div class="item">
             <label for="city">Country<span>*</span></label>
@@ -90,7 +48,7 @@
             <input id="state" type="text"   name="email" required />
           </div>
           <div class="item">
-            <label for="eaddress">CNIC<span>*</span></label>
+            <label for="eaddress">Identity card / Passport<span>*</span></label>
             <input id="eaddress" type="text"   name="cnic" required />
           </div>
           <div class="item">
@@ -102,36 +60,10 @@
             <input id="zip" type="text"   name="zip" required  />
           </div>
 
-<!--                           <div class="question">-->
-<!--            <label>Currently</label>-->
-<!--            <div class="question-answer">-->
-<!--              <div>-->
-<!--                <input type="radio" value="none" id="radio_3" name="participants"/>-->
-<!--                <label for="radio_3" class="radio"><span>Self Employee</span></label>-->
-<!--              </div>-->
-<!--              <div>-->
-<!--                <input  type="radio" value="none" id="radio_4" name="participants"/>-->
-<!--                <label for="radio_4" class="radio"><span>Employee</span></label>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--              <div>-->
-<!--                <input  type="radio" value="none" id="radio_5" name="participants"/>-->
-<!--                <label for="radio_5" class="radio"><span>Father</span></label>-->
-<!--              </div>-->
-<!--              <div>-->
-<!--                <input  type="radio" value="none" id="radio_6" name="participants"/>-->
-<!--                <label for="radio_6" class="radio"><span>Guardian</span></label>-->
-<!--              </div>-->
-<!--              <div>-->
-<!--                <input  type="radio" value="none" id="radio_7" name="participants"/>-->
-<!--                <label for="radio_7" class="radio"><span>Other</span></label>-->
-<!--<input type="text"/>-->
-<!--              </div>-->
-<!--            </div>-->
           </div>
                 </fieldset>
         <div class="btn-block">
-          <button type="submit" href="/">Submit</button>
+          <button type="submit" href="#">Submit</button>
         </div>
       </form>
     </div>
@@ -144,5 +76,4 @@
 		document.getElementByID("result").innerHTML = result;
 	}
 </script>
-  </body>
-</html>
+

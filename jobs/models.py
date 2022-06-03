@@ -22,7 +22,7 @@ class Applicant(models.Model):
     adddress=models.CharField(max_length=500)
     country=models.CharField(max_length=90)
     city=models.CharField(max_length=50)
-    applyedfor=models.CharField(max_length=500)
+    applyedfor=models.CharField(max_length=5000)
     email=models.CharField(max_length=50)
     cnic=models.CharField(max_length=50)
     phone=models.IntegerField(default=0)
