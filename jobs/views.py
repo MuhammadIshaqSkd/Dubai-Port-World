@@ -54,3 +54,6 @@ def applyform(request):
         # print(applyjob)
 
         return render(request, 'index.html',{'ch':ch})
+
+def about(request):
+    return render(request, 'about.html')

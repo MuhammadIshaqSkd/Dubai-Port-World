@@ -19,5 +19,6 @@ urlpatterns = [
     path('',views.index),
     path('apply',views.apply),
     path('applyform',views.applyform),
+    path('about',views.about),
 
 ]
