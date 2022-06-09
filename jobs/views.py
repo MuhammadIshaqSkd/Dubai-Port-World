@@ -16,7 +16,7 @@ def index(request):
         n = int(n)
         nSlides = n // 4 + ceil((n / 4) - (n // 4))
         allProds.append([prod, range(1, nSlides), nSlides])
-    params = {'allProds': allProds, 'n': n,'main':main}
+    params = {'allProds': allProds,'main':main}
 
     return render(request, 'index.html',params)
 
@@ -31,7 +31,7 @@ def apply(request):
         n = int(n)
         nSlides = n // 4 + ceil((n / 4) - (n // 4))
         allProds.append([prod, range(1, nSlides), nSlides])
-    params = {'allProds': allProds, 'n': n, 'apply': apply}
+    params = {'allProds': allProds, 'apply': apply}
 
     return render(request, 'index.html', params)
 
